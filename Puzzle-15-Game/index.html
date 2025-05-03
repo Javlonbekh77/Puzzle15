@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="loading">
+    <div class="loader"></div>
+  </div>
+  <div class="container-1">
+    <div class="logo-section">
+      <img src="./images/logo.png" alt="" />
+      <h1>Puzzle Game</h1>
+    </div>
+    <div class="input-section">
+      <!-- <h2>Ismingiz:</h2> -->
+      <input type="text" placeholder="Ismingiz..." />
+
+      <button class="start-btn btn-grad">Boshlash</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ranks-section">
+      <img src="./images/ranking.png" class="rank-logo" alt="ranking-logo">
+    </div>
+    <div class="info-section">
+      <div class="timer">Time: <span id="timer">00:00</span></div>
+      <div class="count-moves">Moves: <span class="move-count"></span></div>
+    </div>
+    <div class="main-content">
+      <div class="square">1</div>
+      <div class="square">2</div>
+      <div class="square">3</div>
+      <div class="square">4</div>
+      <div class="square">5</div>
+      <div class="square">6</div>
+      <div class="square">7</div>
+      <div class="square">8</div>
+      <div class="square">9</div>
+      <div class="square">10</div>
+      <div class="square">11</div>
+      <div class="square">12</div>
+      <div class="square">13</div>
+      <div class="square">14</div>
+      <div class="square">15</div>
+      <div class="square"></div>
+    </div>
+
+    <button class="restart-1 btn-grad">Restart</button>
+  </div>
+  <div class="congr">
+    <div class="welcome-section">
+
+      <span class="winning">You Win!!! 🎉</span>
+      <div class="btn-sec">
+        <button class="liderboarding btn-grad">LiderBoard</button>
+        <button class="restart btn-grad">Restart</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+
+  <div class="leaderboard-section">
+    <div id="leaderboard">
+      <div class="exit-logo"><img class="exit-btn" src="./images/reject.png" alt=""></div>
+      <div class="ranks"></div>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
