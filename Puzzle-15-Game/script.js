@@ -235,18 +235,33 @@ function submitScore(name, score) {
 			console.log('Score added!', data)
 		})
 }
-
 function loadLeaderboard() {
 	fetch('https://sheetdb.io/api/v1/im50j206xv243')
 		.then(res => res.json())
 		.then(data => {
-			let sorted = data.sort((a, b) => b.score - a.score).reverse()
+			// Unikal name + score kombinatsiyalarini ajratib olish
+			const seen = new Set()
+			const unique = data.filter(entry => {
+				const key = `${entry.name}-${entry.score}`
+				if (seen.has(key)) {
+					return false
+				}
+				seen.add(key)
+				return true
+			})
+
+			// Saralash
+			let sorted = unique.sort((a, b) => a.score - b.score)
+
+			// HTMLga aylantirish
 			let html = sorted
-				.map(entry => `<li>${entry.name}:   ${entry.score} seconds</li>`)
+				.map(entry => `<li>${entry.name}: ${entry.score} seconds</li>`)
 				.join('')
+
 			document.querySelector('.ranks').innerHTML = `<ol>${html}</ol>`
 		})
 }
+
 loadLeaderboard()
 
 function hideRanks() {
